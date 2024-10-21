@@ -5,12 +5,25 @@
     padding: 50px 0; /* Add some padding */
   }
 
-  .about img {
-    width: 100%; /* Full width on mobile */
+  .profile-image-wrapper {
+    display: inline-block;
+    background-color: black; /* Black circle background */
+    border-radius: 50%; /* Circular shape */
+    padding: 10px; /* Spacing around the image */
+    transition: transform 0.3s ease; /* Smooth transition on hover */
+}
+
+.profile-image {
+    border-radius: 50%; /* Ensure the image is circular */
+    width: 100%; /* Full width to fit the circle */
     height: auto; /* Maintain aspect ratio */
-    max-width: 200px; /* Adjust max-width as needed */
-    border-radius: 50%; /* Round image */
-  }
+}
+
+.profile-image-wrapper:hover {
+    transform: scale(1.05); /* Enlarge the circle on hover */
+    cursor: pointer; /* Change cursor on hover */
+}
+
   
 
 
@@ -75,4 +88,22 @@ body {
     right: 0;
     bottom: 0;
     z-index: -1; /* Keep it behind other content */
+}
+
+.project-image {
+    width: 100%; /* Full width for all devices */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.project-image:hover {
+    transform: scale(1.1); /* Scale image on hover */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 576px) {
+    .project-image {
+        width: 100%; /* Ensure images take full width on mobile */
+    }
 }
