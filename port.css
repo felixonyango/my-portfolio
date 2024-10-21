@@ -1,20 +1,35 @@
 .hero {
-    background: url('hero-bg.jpg') no-repeat center center/cover;
-    color: white;
-    padding: 100px 0;
+    background: linear-gradient(to right, #4a90e2, #9013fe); /* Gradient from blue to purple */
+    color: white; /* White text for contrast */
+    padding: 50px 0; /* Add some padding */
+  }
+
+  .about img {
+    width: 100%; /* Full width on mobile */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 200px; /* Adjust max-width as needed */
+    border-radius: 50%; /* Round image */
   }
   
-  .project-image {
-    width: 100%; /* Make the image responsive */
-    height: 200px; /* Set a fixed height for the square effect */
-    object-fit: cover; /* Cover the entire area without distortion */
-    border-radius: 15px; /* Smooth corners */
+
+
+
+  
+  .portfolio img {
+    width: 100%; /* Full width for responsiveness */
+    height: 200px; /* Increased height for larger images */
+    object-fit: cover; /* Maintain aspect ratio without distortion */
+    border-radius: 15px; /* Smoothly rounded corners */
+    max-width: 100%; /* Remove the max-width limit */
   }
+  
+  
+  
   
   .skills .progress {
     margin-bottom: 20px;
   }
-  
+
   .social-icons a {
     margin: 0 10px; /* Space between icons */
   }
