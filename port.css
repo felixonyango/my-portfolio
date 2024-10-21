@@ -1,4 +1,5 @@
 .hero {
+    font-family: Arial, sans-serif;
     background: linear-gradient(to right, #4a90e2, #9013fe); /* Gradient from blue to purple */
     color: white; /* White text for contrast */
     padding: 50px 0; /* Add some padding */
