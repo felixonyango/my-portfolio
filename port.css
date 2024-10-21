@@ -1,0 +1,22 @@
+.hero {
+    background: url('hero-bg.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 100px 0;
+  }
+  
+  .project-image {
+    width: 100%; /* Make the image responsive */
+    height: 200px; /* Set a fixed height for the square effect */
+    object-fit: cover; /* Cover the entire area without distortion */
+    border-radius: 15px; /* Smooth corners */
+  }
+  
+  .skills .progress {
+    margin-bottom: 20px;
+  }
+  
+  .social-icons a {
+    margin: 0 10px; /* Space between icons */
+  }
+  
+  
