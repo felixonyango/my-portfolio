@@ -35,4 +35,44 @@
     margin: 0 10px; /* Space between icons */
   }
   
-  
+  .cursor {
+    display: inline-block;
+    width: 10px;
+    height: 24px;
+    background-color: black;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+
+body {
+    background: linear-gradient(135deg, #b0c4de, #4682b4);
+    background-size: 200% 200%;
+    animation: gradientAnimation 5s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Optional: Adding texture */
+.metallic-texture {
+    background-image: url('path/to/metallic-texture.png'); /* Your metallic texture */
+    opacity: 0.2; /* Adjust the opacity */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; /* Keep it behind other content */
+}
