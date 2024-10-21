@@ -1,23 +1,19 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $to = "felixjuma@1995@gmail.com"; // Replace with your email
+    $subject = "New Contact Form Submission";
     $name = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
     $message = htmlspecialchars($_POST['message']);
-
-    $to = "felixjuma1995@gmail.com";
-    $subject = "New Contact Form Submission from $name";
+    
+    $headers = "From: $name <$email>\r\n";
+    
     $body = "Name: $name\nEmail: $email\nMessage:\n$message";
-
-    // Set content-type header for sending HTML email
-    $headers = "From: $email\r\n";
-    $headers .= "Reply-To: $email\r\n";
-
+    
     if (mail($to, $subject, $body, $headers)) {
-        echo "Email sent successfully!";
+        echo "Message sent successfully!";
     } else {
-        echo "Email sending failed.";
+        echo "Failed to send message.";
     }
-} else {
-    echo "Invalid request.";
 }
 ?>
