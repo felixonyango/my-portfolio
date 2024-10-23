@@ -109,6 +109,39 @@ body {
 }
 
 
+<<<<<<< HEAD
+
+
+.read-aloud {
+    font-size: 24px;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+  }
+
+  .tooltip {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position above the icon */
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .read-aloud:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+=======
 .video-container {
     max-width: 600px; /* Set a maximum width for the container */
     margin: 20px auto; /* Center the container and add margin */
@@ -125,3 +158,4 @@ body {
 
 
   
+>>>>>>> 9e2eae58e20020e3fa374c881b4ebe67bdec0c91
