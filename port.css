@@ -109,6 +109,7 @@ body {
 }
 
 
+<<<<<<< HEAD
 
 
 .read-aloud {
@@ -140,3 +141,21 @@ body {
     visibility: visible;
     opacity: 1;
   }
+=======
+.video-container {
+    max-width: 600px; /* Set a maximum width for the container */
+    margin: 20px auto; /* Center the container and add margin */
+    padding: 10px; /* Add padding to create space around the video */
+    background-color: #f8f8f8; /* Optional: Add a background color */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for effect */
+}
+
+.responsive-video {
+    width: 100%; /* Full width within the container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+  
+>>>>>>> 9e2eae58e20020e3fa374c881b4ebe67bdec0c91
