@@ -109,7 +109,7 @@ body {
 }
 
 
-<<<<<<< HEAD
+
 
 
 .read-aloud {
@@ -141,7 +141,7 @@ body {
     visibility: visible;
     opacity: 1;
   }
-=======
+
 .video-container {
     max-width: 600px; /* Set a maximum width for the container */
     margin: 20px auto; /* Center the container and add margin */
@@ -157,5 +157,4 @@ body {
 }
 
 
-  
->>>>>>> 9e2eae58e20020e3fa374c881b4ebe67bdec0c91
+
