@@ -45,7 +45,6 @@
   </div>
 </header>
 
-
 <!-- About Section -->
 <section id="about" class="about py-5">
   <div class="container">
@@ -57,11 +56,19 @@
       </div>
       <div class="col-md-8">
         <h3>About Me</h3>
-        <em><p>I’m a web developer who juggles both front-end and back-end development, meaning I’m the one who makes websites look good and keeps them from crashing like an old Windows PC. My specialty? Creating sites so smooth, even your grandma could navigate them without calling for tech support.
+        <em><p id="about-text">
+          I’m a web developer who juggles both front-end and back-end development, meaning I’m the one who makes websites look good and keeps them from crashing like an old Windows PC. My specialty? Creating sites so smooth, even your grandma could navigate them without calling for tech support.
 
           I also fully embrace AI because, let’s be real, why do all the hard work when I’ve got a digital sidekick? AI helps me code faster, smarter, and probably better than I ever could at 2 a.m. while running on caffeine fumes. Basically, I let the robots handle the complex stuff while I sit back and act like I totally had it all figured out.
-          
-          If you want a website that’s fast, user-friendly, and powered by a combo of human creativity and robot efficiency, I’m your developer. I’ll build it like I’m racing against a deadline, because let’s face it, I probably am!</p></em>
+
+          If you want a website that’s fast, user-friendly, and powered by a combo of human creativity and robot efficiency, I’m your developer. I’ll build it like I’m racing against a deadline, because let’s face it, I probably am!
+        </p></em>
+
+        <!-- Read Aloud Button with Icon -->
+        <button id="read-aloud-btn" class="btn btn-primary">
+          <i class="fa fa-volume-up" aria-hidden="true"></i>
+          <span class="sr-only">Read Aloud</span>
+        </button>
       </div>
     </div>
   </div>
@@ -187,6 +194,53 @@ window.onload = function() {
 
 
 
+  let isSpeaking = false; // Track whether the speech is currently ongoing
+  let currentChunk = 0; // Track the current chunk being spoken
+  let speech; // Store the SpeechSynthesisUtterance object
+
+  // Function to read aloud text in chunks
+  function readAloud(text) {
+    const chunkSize = 200; // Adjust this size if needed
+    const textChunks = [];
+    
+    // Split the text into smaller chunks
+    for (let i = 0; i < text.length; i += chunkSize) {
+      textChunks.push(text.slice(i, i + chunkSize));
+    }
+
+    function speakChunk() {
+      if (currentChunk < textChunks.length && isSpeaking) {
+        speech = new SpeechSynthesisUtterance(textChunks[currentChunk]);
+        speech.lang = 'en-US';
+        speech.pitch = 1;
+        speech.rate = 1;
+        speech.volume = 1;
+        speech.voice = speechSynthesis.getVoices().find(voice => voice.name === 'Google US English Male') || speechSynthesis.getVoices()[0];
+
+        speech.onend = function() {
+          currentChunk++;
+          speakChunk(); // Continue to the next chunk
+        };
+
+        window.speechSynthesis.speak(speech);
+      }
+    }
+
+    if (!isSpeaking) {
+      isSpeaking = true; // Start speaking
+      currentChunk = 0; // Reset to first chunk
+      speakChunk(); // Start reading the first chunk
+    } else {
+      isSpeaking = false; // Stop speaking
+      window.speechSynthesis.cancel(); // Stop any ongoing speech
+    }
+  }
+
+  // Add event listener to the button
+  document.getElementById('read-aloud-btn').addEventListener('click', function() {
+    const text = document.getElementById('about-text').innerText;
+    readAloud(text);
+  });
 
 
   </script>
